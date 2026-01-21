@@ -87,6 +87,7 @@ recommendation2 = convert_to_json(cur.execute(
 <p style="margin: 1em 0;">It looks like you didn't enjoy your {{product['product_name']}}. Remember that you can get a <a href="#" style="text-decoration: none; color: darkgreen;">refund</a> if you are unhappy with your purchase.</p>
 {% endif %}
 ```
+<img src="/examples/positive-review.gif" style="width:40%"><img src="/examples/negative-review.png" style="width:40%"><
 
 All the emails are in <a href=examples.md>examples.md</a> and the <a href=/examples>examples directory.</a>
 
