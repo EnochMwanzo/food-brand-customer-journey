@@ -88,7 +88,7 @@ recommendation2 = convert_to_json(cur.execute(
 {% endif %}
 ```
 
-All the emails are in examples.md and the examples directory.
+All the emails are in <a href=examples.md>examples.md</a> and the <a href=/examples>examples directory.</a>
 
 ### metrics
 
