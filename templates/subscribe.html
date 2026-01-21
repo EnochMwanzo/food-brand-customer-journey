@@ -1,0 +1,55 @@
+{% extends 'base-email.html' %}
+{% block title %}Thanks for subscribing!{% endblock %}
+{% block content %}
+<h1 style="margin: .67em 0; font-family: 'Playfair Display', Georgia, serif; font-size:2em">
+  Thanks for subscribing!
+</h1>
+<img src="https://unsplash.com/photos/Ic0E0y6Zo20/download?force=true&w=640" alt="doughnuts" style="width: 100%; display:block; max-height:250px; object-fit: cover;">
+<p style="margin: 1em 0;">Hello {{customer['username']}},</p>
+<p style="margin: 1em 0;">Now that you are a subscriber, you will receive a set of doughnuts twice a month.</p>
+<p style="margin: 1em 0;">Here are the products that you will receive:</p>
+<!--[if true]>
+<table role="presentation" width="100%" style="all:unset;opacity:0;">
+  <tr>
+<![endif]-->
+<!--[if false]></td></tr></table><![endif]-->
+<div style="display:table;width:100%;">
+  <!--[if true]>
+    <td width="50%">
+  <![endif]-->
+  <!--[if !true]><!-->
+    <div style="display:table-cell;width:50%">
+  <!--<![endif]-->
+      <img src="{{product['product_image_link']}}" alt="{{product['product_name']}}" style="display:block; margin:0 auto; border: 3px solid #451212; width: 80%; max-height: 250px; object-fit: cover;">
+      <h2 style="margin: .83em 0; font-family: 'Playfair Display', Georgia, serif; font-size:1.5em">
+        {{product['product_name']}}
+      </h2>
+  <!--[if !true]><!-->
+    </div>
+  <!--<![endif]-->
+  <!--[if true]>
+    </td>
+  <![endif]-->
+  <!--[if true]>
+    <td width="50%">
+  <![endif]-->
+  <!--[if !true]><!-->
+    <div style="display:table-cell;width:50%">
+  <!--<![endif]-->
+      <img class="has-border" src="{{product2['product_image_link']}}" alt="{{product2['product_name']}}" style="display:block; margin:0 auto; border: 3px solid #451212; width: 80%; max-height: 250px; object-fit: cover;">
+      <h2 style="margin: .83em 0; font-family: 'Playfair Display', Georgia, serif; font-size:1.5em">
+        {{product2['product_name']}}
+      </h2>
+  <!--[if !true]><!-->
+    </div>
+  <!--<![endif]-->
+  <!--[if true]>
+    </td>
+  <![endif]-->
+</div>
+<!--[if true]>
+  </tr>
+</table>
+<![endif]-->
+{% endblock %}
+

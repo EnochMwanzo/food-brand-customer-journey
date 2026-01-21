@@ -1,0 +1,16 @@
+{% extends 'base-email.html' %}
+{% block title %}Cancelled Subscription{% endblock %}
+{% block content %}
+<h1 style="margin: .67em 0; font-family: 'Playfair Display', Georgia, serif; font-size:2em">
+  {{customer['username']}}, you cancelled your subscription.
+</h1>
+<p style="margin: 1em 0;">Hello {{customer['username']}},</p>
+<p style="margin: 1em 0;">You will no longer be charged, and you will stop receiving subscription products from us.</p>
+<p style="margin: 1em 0;">You can <a href="#" style="text-decoration: none; color: darkgreen;">renew your subscription</a>if you decide to come back.</p>
+<p style="margin: 1em 0;">Thank you for your time with us.</p>
+<p style="margin: 1em 0;">Sincerely, The Dougnuts Brand</p>
+<div style="line-height:50px; height:50px;">&#8202;</div>
+<a class="cta" href="#" style="background-color:#451212; color: moccasin; text-decoration: none; display:inline-block; border-radius:16px; padding: .5em 2em;">
+  Renew your subscription.
+</a>
+{% endblock %}

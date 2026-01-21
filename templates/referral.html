@@ -1,0 +1,11 @@
+{% extends 'base-email.html' %}
+{% block title %}Thank you for your referral.{% endblock %}
+{% block content %}
+<h1 style="margin: .67em 0; font-family: 'Playfair Display', Georgia, serif; font-size:2em">
+  Thank you for your referral.
+</h1>
+<p style="margin: 1em 0;">Hello {{customer['username']}},</p>
+<p style="margin: 1em 0;">Thank you for referring another person to shop with us. To show our thanks, we will give you a discount on your next item.</p>
+<p style="margin: 1em 0;">Sincerely, The Dougnuts Brand</p>
+{% endblock %}
+

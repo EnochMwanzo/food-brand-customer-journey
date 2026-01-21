@@ -1,0 +1,101 @@
+{% extends 'base-email.html' %}
+{% block title %}Learn more about {{product['product_name']}}.{% endblock %}
+{% block content %}
+<h1 style="margin: .67em 0; font-family: 'Playfair Display', Georgia, serif; font-size:2em">
+  Learn more about {{product['product_name']}}
+</h1>
+<p style="margin: 1em 0;">Hello {{customer['username']}},</p>
+<p style="margin: 1em 0;">It looks like you were viewing our {{product['product_name']}} page.</p> 
+<figure>
+  <img class="has-border" src="{{product['product_image_link']}}" alt="{{product['product_description']}}" style="width: 60%; display:block; margin: 0 auto; border: 5px solid #451212">
+  <figcaption>{{product['product_description']}}</figcaption>
+</figure>
+<p>We created {{product['product_name']}} because we wanted to ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu magna est.</p>
+<p style="margin: 1em 0;">Here is what members of our team had to say.</p>
+<!--[if true]>
+<table role="presentation" width="100%" style="all:unset;opacity:0;">
+  <tr>
+<![endif]-->
+<!--[if false]></td></tr></table><![endif]-->
+<div style="display:table;width:100%;">
+  <!--[if true]>
+    <td width="25%">
+  <![endif]-->
+  <!--[if !true]><!-->
+    <div class="column" style="width:20%;vertical-align: middle;">
+  <!--<![endif]-->
+      <img src="https://unsplash.com/photos/e5Q5vWO55uU/download?force=true&w=640" alt="team member 1" class="has-border" style="width:100%;display:block; border: 5px solid #451212;">
+      <div style="line-height:50px; height:50px;">&#8202;</div>
+  <!--[if !true]><!-->
+    </div>
+  <!--<![endif]-->
+  <!--[if true]>
+    </td>
+  <![endif]-->
+  <!--[if true]>
+    <td width="50%">
+  <![endif]-->
+  <!--[if !true]><!-->
+    <div class="column" style="width:60%; vertical-align: middle;">
+  <!--<![endif]-->
+      <p style="margin: 1em 0;">I'm really proud of how {{product['product_name']}} came out. When we started, onvallis nisi mauris, nec luctus elit feugiat ut. Fusce scelerisque vehicula egestas. But we were able to id mauris ut diam sollicitudin rutrum at eget arcu!</p>
+      <div style="line-height:50px; height:50px;">&#8202;</div>
+  <!--[if !true]><!-->
+    </div>
+  <!--<![endif]-->
+  <!--[if true]>
+    </td>
+  <![endif]-->
+</div>
+<!--[if true]>
+  </tr>
+</table>
+<![endif]-->
+<!--[if true]>
+<table role="presentation" width="100%" style="all:unset;opacity:0;">
+  <tr>
+<![endif]-->
+<!--[if false]></td></tr></table><![endif]-->
+<div style="display:table;width:100%;">
+  <!--[if true]>
+    <td width="50%">
+  <![endif]-->
+  <!--[if !true]><!-->
+    <div class="column" style="width:20%; vertical-align: middle;">
+  <!--<![endif]-->
+      <img src="https://unsplash.com/photos/Lmpx1n-TVjk/download?force=true&w=640" alt="team member 2" class="has-border" style="width:100%;display:block; border: 5px solid #451212;">
+  <!--[if !true]><!-->
+    </div>
+  <!--<![endif]-->
+  <!--[if true]>
+    </td>
+  <![endif]-->
+  <!--[if true]>
+    <td width="50%">
+  <![endif]-->
+  <!--[if !true]><!-->
+    <div class="column" style="width:60%; vertical-align: middle;">
+  <!--<![endif]-->
+      <p style="margin: 1em 0;">I'm really proud of how {{product['product_name']}} came out. When we started, onvallis nisi mauris, nec luctus elit feugiat ut. Fusce scelerisque vehicula egestas. But we were able to id mauris ut diam sollicitudin rutrum at eget arcu!</p>
+  <!--[if !true]><!-->
+    </div>
+  <!--<![endif]-->
+  <!--[if true]>
+    </td>
+  <![endif]-->
+</div>
+<!--[if true]>
+  </tr>
+</table>
+<![endif]-->
+<p style="margin: 1em 0;">As you can see, we are really passionate about {{product['product_name']}}. We hope you decide to try it out.</p>
+<p style="margin: 1em 0;">Sincerely, The Dougnuts Brand</p>
+<div style="line-height:50px; height:50px;">&#8202;</div>
+<a class="cta" href="#" style="background-color:#451212; color: moccasin; text-decoration: none; display:inline-block; border-radius:16px; padding: .5em 2em;">
+  Add {{product['product_name']}} to your cart.
+</a>
+{% endblock %}
+
+
+
+

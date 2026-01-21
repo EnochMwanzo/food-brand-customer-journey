@@ -1,0 +1,6 @@
+,id,product_name,product_description,product_image_link,stock,price
+0,1,Plain Doughnuts,Doughnuts with nothing added to them,https://unsplash.com/photos/FmMlzpBbJcg/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzY4NzUzMTYwfA&force=true&w=640,6,18.99
+1,2,Chocolate Doughnuts,Doughnuts with chocolate icing and sprinkles,https://unsplash.com/photos/X1Xe7tYCaZc/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MjZ8fGRvdWdobnV0fGVufDB8Mnx8fDE3Njg2MDQzNTR8MA&force=true&w=640,5,19.99
+2,3,Vaiety,A diverse set of doughnuts,https://unsplash.com/photos/9pf74eJrb74/download?force=true&w=640,4,26.99
+3,4,Strawberry Doughnuts,Doughnuts wth strawberry icing,https://unsplash.com/photos/PFzy4N0_R3M/download?force=true&w=640,6,20.99
+4,5,Glazed Doughnuts,Doughnuts coated in a sugary glaze,https://unsplash.com/photos/NH2S3zVPMaE/download?force=true&w=640,6,29.99

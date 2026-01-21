@@ -1,0 +1,19 @@
+{% extends 'base-email.html' %}
+{% block title %}You have items in your cart.{% endblock %}
+{% block content %}
+<h1 style="margin: .67em 0; font-family: 'Playfair Display', Georgia, serif; font-size:2em">
+  {{customer['username']}}, you have items in your cart.
+</h1>
+<p style="margin: 1em 0;">Hello {{customer['username']}},</p>
+<p style="margin: 1em 0;">It looks like you added some items to your cart, but have not made a purchase. Here is what you added:</p>
+<figure>
+<img class="has-border" src="{{product['product_image_link']}}" alt="{{product['product_description']}}" style="width: 60%; display:block; margin: 0 auto; border: 5px solid #451212;">
+<figcaption>{{product['product_description']}}</figcaption>
+</figure>
+<p style="margin: 1em 0;">There are {{product['stock']}} left in stock, so get it for ${{product['price']}} when your ready.</p>
+<div style="line-height:50px; height:50px;">&#8202;</div>
+<a class="cta" href="#" style="background-color:#451212; color: moccasin; text-decoration: none; display:inline-block; border-radius:16px; padding: .5em 2em;">
+  Checkout
+</a>
+{% endblock %}
+

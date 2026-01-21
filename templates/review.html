@@ -1,0 +1,27 @@
+{% extends 'base-email.html' %}
+{% block title %}Thank you for leaving a review.{% endblock %}
+{% block content %}
+<h1 style="margin: .67em 0; font-family: 'Playfair Display', Georgia, serif; font-size:2em">
+    Thank you for leaving a review.
+</h1>
+<p style="margin: 1em 0;">Hello {{customer['username']}},</p>
+<p style="margin: 1em 0;">Thanks for leaving a review. We really appreciate your feedback.</p>
+{% if rating['rating'] >= 3 %}
+<p style="margin: 1em 0;">It looks like you really enjoyed {{product['product_name']}}. Here are some other products you may also like:</p>
+{% for i in recommendations %}
+<figure>
+  <img class="has-border" src="{{i['product_image_link']}}" alt="{{i['product_description']}}" style="width: 60%; max-height: 250px; overflow: hidden; display:block; margin: 0 auto; border: 3px solid #451212">
+  <figcaption>{{i['product_description']}}</figcaption>
+</figure>
+<p style="margin: 1em 0;">There are {{i['stock']}} left in stock, so get it for {{i['price']}} when your ready.</p>
+{% endfor %}
+<p style="margin: 1em 0;">Sincerely, The Dougnuts Brand</p>
+<div style="line-height:50px; height:50px;">&#8202;</div>
+<a class="cta" href="#" style="background-color:#451212; color: moccasin; text-decoration: none; display:inline-block; border-radius:16px; padding: .5em 2em;">
+  View Recommended Products
+</a>
+{% elif rating['rating'] < 3 %}
+<p style="margin: 1em 0;">It looks like you didn't enjoy your {{product['product_name']}}. Remember that you can get a <a href="#" style="text-decoration: none; color: darkgreen;">refund</a> if you are unhappy with your purchase.</p>
+{% endif %}
+<p style="margin: 1em 0;">Sincerely, The Dougnuts Brand</p>
+{% endblock %}

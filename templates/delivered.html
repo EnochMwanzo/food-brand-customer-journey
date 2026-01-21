@@ -1,0 +1,16 @@
+{% extends 'base-email.html' %}
+{% block title %}{{customer['username']}}, your {{product['product_name']}} is here!{% endblock %}
+{% block content %}
+<h1 style="margin: .67em 0; font-family: 'Playfair Display', Georgia, serif; font-size:2em">
+    {{customer['username']}}, your {{product['product_name']}} is here!
+</h1>
+<img class="has-border" src="{{product['product_image_link']}}" alt="doughnuts" style="width: 60%; display:block; margin: 0 auto; border: 3px solid #451212">
+<p style="margin: 1em 0;">Good news {{customer['username']}},</p>
+<p style="margin: 1em 0;">Your order of {{order['quantity']}} {{product['product_name']}} has been delivered. We hope you enjoy it.</p>
+<p style="margin: 1em 0;">Do you have any feedback about the delivery, or your experience with The Dougnuts Brand? Let us know by leaving a review.</p>
+<p style="margin: 1em 0;">Sincerely, The Dougnuts Brand</p>
+<div style="line-height:50px; height:50px;">&#8202;</div>
+<a class="cta" href="#" style="background-color:#451212; color: moccasin; text-decoration: none; display:inline-block; border-radius:16px; padding: .5em 2em;">
+  Leave a Review
+</a>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base-email.html' %}
+{% block title %}Your order is on its way.{% endblock %}
+{% block content %}
+<h1 style="margin: .67em 0; font-family: 'Playfair Display', Georgia, serif; font-size:2em">
+    Your order is on its way.
+</h1>
+<p style="margin: 1em 0;">Hello {{customer['username']}},</p>
+<p style="margin: 1em 0;">Your order of {{order['quantity']}} {{product['product_name']}} is on its way. You can track your order <a href="#">here</a>.</p>
+<p style="margin: 1em 0;">Sincerely, The Dougnuts Brand</p>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base-email.html' %}
+{% block title %}Renew{% endblock %}
+{% block content %}
+<h1 style="margin: .67em 0; font-family: 'Playfair Display', Georgia, serif; font-size:2em">
+  You're back!
+</h1>
+<p style="margin: 1em 0;">Hello {{customer['username']}},</p>
+<p style="margin: 1em 0;">You have subscribed again, so you will start receiving doughnuts from us again. View our products and decide which ones you want. We are glad to have you back, {{customer['username']}}</p>
+<p style="margin: 1em 0;">Sincerely, The Dougnuts Brand</p>
+<div style="line-height:50px; height:50px;">&#8202;</div>
+<a class="cta" href="#" style="background-color:#451212; color: moccasin; text-decoration: none; display:inline-block; border-radius:16px; padding: .5em 2em;">
+  View Products
+</a>
+{% endblock %}

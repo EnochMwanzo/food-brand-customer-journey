@@ -1,0 +1,12 @@
+{% extends 'base-email.html' %}
+{% block title %}{{customer['username']}}, thank you for your purchase.{% endblock %}
+{% block content %}
+<h1 style="margin: .67em 0; font-family: 'Playfair Display', Georgia, serif; font-size:2em">
+  Thank you for your purchase!
+</h1>
+<img src="https://unsplash.com/photos/6SMF42-JTAc/download?force=true&w=640" alt="doughnuts" style="width: 100%; display:block">
+<p style="margin: 1em 0;">Hello {{customer['username']}},</p>
+<p style="margin: 1em 0;">Thank you for shopping with The Dougnuts Brand. We will send you updates on the status of your order of {{product['product_name']}} for ${{product['price'] * quantity}}.</p>
+<p style="margin: 1em 0;">Sincerely, The Dougnuts Brand</p>
+{% endblock %}
+
