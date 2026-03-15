@@ -8,9 +8,8 @@ def convert_to_json(result):
     for row in result.fetchall():
         result = dict(zip(columns, row))
     return result
-order_data = convert_to_json(cur.execute(
-        "SELECT * FROM orders WHERE id = ?", [1]
-    ))
-print(order_data['product_id'])
+r = convert_to_json(cur.execute("SELECT(SELECT COUNT(*) FROM conversions WHERE subscribe = TRUE)* 1.0/(SELECT COUNT(*) FROM conversions) AS conversion_rate"))
+print(r)
 con.commit()
+con.close()
 

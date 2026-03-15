@@ -328,15 +328,37 @@ def renew():
     email(template, customer_data)
     return result
 
-@app.route("/metrics", methods=["POST"])
+@app.route("/metrics", methods=["GET"])
 def metrics():
-    number_of_purchases = convert_to_json(cur.execute(
-        "SELECT COUNT(*) as number_of_purchase FROM orders GROUP BY customer_id"
+    lifetime_value = convert_to_json(cur.execute(
+        "SELECT SUM(total) AS lifetime_value FROM orders GROUP BY customer_id"
     ))
-    cur.execute(
-        "INSERT INTO customers (number_of_purchases) VALUES(?)", [number_of_purchases]
-    )
-    con.commit()
+    churn_rate = convert_to_json(cur.execute(
+        "SELECT COUNT(SELECT * FROM triggers WHERE cancel = 'TRUE')*1.0/COUNT(SELECT * FROM conversions WHERE subscribe = 'TRUE') AS churn_rate"
+    ))
+    save_rate = convert_to_json(cur.execute(
+        "SELECT COUNT(SELECT * FROM conversions WHERE refund = 'TRUE')*1.0/COUNT(SELECT * FROM triggers WHERE cancel = 'TRUE') AS save_rate"
+    ))
+
+@app.route("/conversion-rates/", methods=["POST"])
+def conversion_rates():
+    conversion = request.json.get("field")
+    conversion_rate = convert_to_json(cur.execute(
+        "SELECT(SELECT COUNT(*) FROM conversions WHERE ? = TRUE) * 1.0/(SELECT COUNT(*) FROM conversions)AS conversion_rate", [field]
+    ))
+    return conversion_rate
+
+
+@app.route("/update-purchases", methods=["GET"])
+def update_purchases():
+    purchase_data = convert_to_json(cur.execute(
+        "SELECT customer_id, COUNT(*) AS number_of_purchase FROM orders GROUP BY customer_id"
+    ))
+    for i in purchase_data:
+        cur.execute(
+            "UPDATE customers SET number_of_purchases=? WHERE id=?", [purchase_data['number_of_purchases'], purchase_data['customer_id']]
+        )
+        con.commit()
 
 if __name__ == "__main__":
     app.run(debug=True, port='5001')
