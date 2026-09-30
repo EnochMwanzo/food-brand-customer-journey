@@ -5,7 +5,7 @@ All the emails I created for donut brand in one page.
 <img src="/examples/signup.gif" style="width:50%">
 
 ### view product page
-<img src="/examples/view-product-page.gif" style="width:50%">
+<img src="/examples/view-produt-page.gif" style="width:50%">
 
 ### abandoned cart
 <img src="/examples/abandoned-cart.gif" style="width:50%">
